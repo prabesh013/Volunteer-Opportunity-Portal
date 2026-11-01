@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8" />
+
+    <!-- Responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Page title -->
+    <title>VolunteerConnect | Find Volunteer Opportunities</title>
+
+    <!-- SEO description -->
+    <meta
+      name="description"
+      content="Discover meaningful volunteer opportunities, connect with organizations, and make a positive impact in your community."
+    />
+
+    <!-- Search engine indexing -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- Browser theme color -->
+    <meta name="theme-color" content="#166534" />
+
+    <!-- Open Graph for social media sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="VolunteerConnect | Make a Difference" />
+    <meta
+      property="og:description"
+      content="Find local volunteer opportunities and connect with organizations making an impact."
+    />
+
+    <meta property="og:image" content="/vc-meta.png" />
+
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+
+    <title>Opportunities | VolunteerConnect</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-bar">
+        <a href="index.html" class="brand" aria-label="VolunteerConnect home">
+          <span class="brand-mark" aria-hidden="true">✳</span>
+          Volunteer<span>Connect</span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a class="active" aria-current="page" href="index.html">Explore</a>
+          <a href="create.html">For organizations</a>
+        </nav>
+        <a href="create.html" class="btn btn-outline nav-cta"
+          >Post an opportunity</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <span class="eyebrow">GIVE YOUR TIME. MAKE AN IMPACT.</span>
+          <h1>Find a cause worth showing up for.</h1>
+          <p>
+            Explore meaningful ways to volunteer, connect with local
+            organizations, and make your community stronger.
+          </p>
+          <a class="btn btn-primary" href="#opportunities"
+            >Browse opportunities <span aria-hidden="true">→</span></a
+          >
+        </div>
+      </section>
+
+      <section class="section container" id="opportunities">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow eyebrow-dark">DISCOVER YOUR NEXT OPPORTUNITY</p>
+            <h2>Volunteer opportunities</h2>
+            <p>Choose an opportunity that fits your interests and schedule.</p>
+          </div>
+        </div>
+
+        <!-- Visual-only filters. Hook them to your backend later. -->
+        <form
+          class="filter-panel"
+          action="/opportunities"
+          method="GET"
+          role="search"
+        >
+          <div class="field">
+            <label for="search">Search opportunities</label>
+            <input
+              id="search"
+              type="search"
+              name="search"
+              placeholder="Search by title or keyword"
+            />
+          </div>
+          <div class="field">
+            <label for="category">Category</label>
+            <select id="category" name="category">
+              <option value="">All categories</option>
+              <option value="community">Community</option>
+              <option value="education">Education</option>
+              <option value="environment">Environment</option>
+              <option value="health">Health</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="location">Location</label>
+            <input
+              id="location"
+              type="text"
+              name="location"
+              placeholder="City or ZIP code"
+            />
+          </div>
+          <button class="btn btn-primary filter-btn" type="submit">
+            Search
+          </button>
+        </form>
+
+        <div class="list-heading">
+          <h3>Available opportunities</h3>
+          <span class="muted"
+            >Listings from your database will appear here</span
+          >
+        </div>
+
+        <div class="opportunity-list">
+          <!--
+          REUSABLE LISTING TEMPLATE:
+          Your backend should loop through database records and render one
+          <article class="opportunity-card"> per opportunity.
+          Replace the sample placeholder text and Apply link for each record.
+        -->
+          <article class="opportunity-card">
+            <div class="opportunity-icon" aria-hidden="true">♥</div>
+            <div class="opportunity-content">
+              <div class="card-topline">
+                <span class="tag">Category</span>
+                <span class="meta">Date / schedule</span>
+              </div>
+              <h4>Opportunity title</h4>
+              <p class="organization">Organization name</p>
+              <p class="description">
+                A short description of the volunteer activity will appear here
+                when your backend loads this opportunity.
+              </p>
+              <div class="opportunity-meta">
+                <span>⌖ &nbsp;Location</span>
+                <span>◷ &nbsp;Time commitment</span>
+                <span>♙ &nbsp;Available spots</span>
+              </div>
+            </div>
+            <div class="card-action">
+              <!-- Backend: replace with the selected opportunity's URL or ID. -->
+              <a class="btn btn-primary" href="apply.html">Apply now</a>
+            </div>
+          </article>
+          <!-- Repeat article here for every other opportunity. -->
+        </div>
+
+        <div class="empty-note">
+          This is a reusable placeholder card, not a real volunteer listing.
+        </div>
+      </section>
+
+      <section class="organization-banner">
+        <div class="container banner-inner">
+          <div>
+            <p class="eyebrow">FOR ORGANIZATIONS</p>
+            <h2>Need an extra pair of hands?</h2>
+            <p>Share your opportunity and reach volunteers ready to help.</p>
+          </div>
+          <a class="btn btn-light" href="create.html"
+            >Post an opportunity <span aria-hidden="true">→</span></a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <strong>VolunteerConnect</strong>
+        <p>Connecting people with purpose.</p>
+        <span>© 2026 VolunteerConnect</span>
+      </div>
+    </footer>
+  </body>
+</html>
